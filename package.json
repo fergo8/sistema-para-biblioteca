@@ -1,0 +1,28 @@
+{
+  "name": "sistema-para-biblioteca",
+  "version": "1.0.0",
+  "description": "Sistema para biblioteca",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fergo8/sistema-para-biblioteca.git"
+  },
+  "author": "Jefferson Gomes",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/fergo8/sistema-para-biblioteca/issues"
+  },
+  "homepage": "https://github.com/fergo8/sistema-para-biblioteca#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "consign": "^0.1.6",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "express-validator": "^3.2.1",
+    "mongodb": "^2.2.29"
+  }
+}
