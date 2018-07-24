@@ -1,0 +1,28 @@
+/*
+ * Author: Jefferson Gomes
+ * Version: 0.1
+ */
+
+/* ======================== */
+
+html, body, .login-screen {
+    height: 100%;
+}
+
+/* Login screen */
+.login-screen {
+    display: table;
+    width: 100%;
+}
+
+.login-content {
+    display: table-cell;
+    vertical-align: middle;
+    justify-content: center;
+}
+
+.login-form {
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
