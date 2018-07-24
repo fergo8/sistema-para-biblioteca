@@ -19,4 +19,5 @@ module.exports.register = (app, req, res) => {
     var connection = app.config.dbConnection;
     var UserDAO = new app.app.models.UserDAO(connection);
     
+    UserDAO.insertUser(formData);
 }
