@@ -26,3 +26,9 @@ html, body, .login-screen {
     margin-left: auto;
     margin-right: auto;
 }
+
+.login-alert {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}

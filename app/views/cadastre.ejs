@@ -4,12 +4,24 @@
 <body>
     <section class="login-screen">
         <article class="login-content">
-            <form class="form-group my-2 my-lg-0 login-form">
+            
+            <% if(valid.length > 0){ %>
+                <div class="alert alert-danger login-alert">
+                    <strong>Atenção!</strong>
+                    <ul>
+                        <% for(var i=0; i < valid.length; i++){ %>
+                            <li><%= valid[i].msg %></li>
+                        <% } %>
+                    </ul>
+                </div>
+            <% } %>
+            
+            <form class="form-group my-2 my-lg-0 login-form" action="/register" method="POST">
                 <h1>Cadastro</h1>
                 <hr /><br />
-                <input class="form-control mr-sm-2" type="text" placeholder="Nome completo" aria-label="Nome" /><br />
-                <input class="form-control mr-sm-2" type="text" placeholder="Nickname" aria-label="Nickname" /><br />
-                <input class="form-control mr-sm-2" type="text" placeholder="Senha" aria-label="Senha" /><br />
+                <input class="form-control mr-sm-2" name="user" type="text" placeholder="Nome do usuário" aria-label="Nome" /><br />
+                <input class="form-control mr-sm-2" name="nickname" type="text" placeholder="Nickname" aria-label="Nickname" /><br />
+                <input class="form-control mr-sm-2" name="password" type="text" placeholder="Senha" aria-label="Senha" /><br />
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cadastrar</button>
             </form>
         </article>
