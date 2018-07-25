@@ -2,8 +2,82 @@
 <html lang="pt-br">
 <% include header %>
 <body>
-    <section class="">
-        <h1>Teste</h1>
+    <% include navbar %>
+
+    <section class="container">
+        <h1>Cadastro de Livros</h1>
+        <hr /><br />
+
+        <% if(valid.length > 0){ %>
+            <div class="alert alert-danger login-alert">
+                <strong>Atenção!</strong>
+                <ul>
+                    <% for(var i=0; i < valid.length; i++){ %>
+                        <li><%= valid[i].msg %></li>
+                    <% } %>
+                </ul>
+            </div>
+        <% } %>
+
+        <form action="/book_register" method="post">
+            <div class="firm-row">
+                <div class="form-group">
+                    <label for="title">Título:</label>
+                    <input class="form-control" type="text" name="title" id="title" placeholder="Título do livro" />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="author">Autor:</label>
+                    <input class="form-control" type="text" name="author" id="author" placeholder="Nome do autor" />
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="publisher">Editora:</label>
+                    <input class="form-control" type="text" name="publisher" id="publisher" placeholder="Nome da editora" />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="genre">Gênero:</label>
+                    <select class="form-control" name="genre" id="genre">
+                        <option value="" selected>Escolha um gênero</option>
+                        <option value="">teste</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="pages">Quantidade de páginas:</label>
+                    <select class="form-control" name="pages" id="pages">
+                        <option value="" selected>Escolha a quantidade de páginas</option>
+                        <option value="">Menos de 50</option>
+                        <option value="">51 à 100</option>
+                        <option value="">101 à 150</option>
+                        <option value="">151 à 200</option>
+                        <option value="">201 à 250</option>
+                        <option value="">251 à 300</option>
+                        <option value="">301 à 350</option>
+                        <option value="">351 à 400</option>
+                        <option value="">401 à 450</option>
+                        <option value="">451 à 500</option>
+                        <option value="">Mais de 500</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="status">Status:</label>
+                    <select class="form-control" name="status" id="status">
+                        <option value="" selected>Não lido</option>
+                        <option value="">Lendo</option>
+                        <option value="">Lido</option>
+                        <option value="">Abandonado</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="synopsis">Sinopse:</label>
+                <textarea class="form-control" name="synopsis" id="synopsis" rows="6" placeholder="Insira a sinopse do livro aqui..."></textarea>
+            </div>
+            <input class="btn btn-success" type="submit" value="Cadastrar livro" />
+        </form>
+
     </section>
     <% include footer %>
 </body>
