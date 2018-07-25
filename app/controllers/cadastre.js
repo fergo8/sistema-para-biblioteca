@@ -20,4 +20,6 @@ module.exports.register = (app, req, res) => {
     var UserDAO = new app.app.models.UserDAO(connection);
     
     UserDAO.insertUser(formData);
+
+    res.render("index", { valid : {} });
 }
