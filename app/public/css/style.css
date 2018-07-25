@@ -9,6 +9,10 @@ html, body, .login-screen {
     height: 100%;
 }
 
+.navbar-margin {
+    margin-top: 80px;
+}
+
 /* Login screen */
 .login-screen {
     display: table;
