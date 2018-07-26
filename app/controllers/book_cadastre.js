@@ -1,5 +1,7 @@
 module.exports.book_cadastre = (app, req, res) => {
-    res.render("book_cadastre", { bookValid : {}, msg : {} });
+
+    var user = req.session.user;
+    res.render("book_cadastre", { bookValid : {}, msg : {}, user : user });
 }
 
 module.exports.book_register = (app, req, res) => {
