@@ -8,13 +8,22 @@
         <h1>Cadastro de Livros</h1>
         <hr /><br />
 
-        <% if(valid.length > 0){ %>
+        <% if(bookValid.length > 0){ %>
             <div class="alert alert-danger login-alert">
                 <strong>Atenção!</strong>
                 <ul>
-                    <% for(var i=0; i < valid.length; i++){ %>
-                        <li><%= valid[i].msg %></li>
+                    <% for(var i=0; i < bookValid.length; i++){ %>
+                        <li><%= bookValid[i].msg %></li>
                     <% } %>
+                </ul>
+            </div>
+        <% } %>
+
+        <% if(msg.length > 0){ %>
+            <div class="alert alert-success login-alert">
+                <strong>Atenção!</strong>
+                <ul>
+                    <li><%= msg %></li>
                 </ul>
             </div>
         <% } %>
