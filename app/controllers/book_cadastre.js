@@ -15,6 +15,13 @@ module.exports.book_register = (app, req, res) => {
     var error = req.validationErrors();
 
     if(error){
-        res.render("book_cadastre", { valid : error })
+        res.render("book_cadastre", { valid : error });
     }
+
+    var connection = app.config.dbConnection;
+    var LibraryDAO = new app.app.models.LibraryDAO(connection);
+
+    LibraryDAO.insertBook(formData);
+
+    res.render("book_cadastre", { valid : {} });
 }
