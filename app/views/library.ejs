@@ -6,33 +6,36 @@
     
     <section class="container navbar-margin">
         <h1>Biblioteca</h1>
+        <hr /><br />
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Título</th>
-                    <th>Autor</th>
-                    <th>Gênero</th>
-                    <th>Editora</th>
-                    <th>Sinopse</th>
-                    <th>Páginas</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% for(var i=0; i < data.length; i++){ %>
+        <article class="table-responsive">
+            <table class="table table-hover">
+                <thead class="thead-dark">
                     <tr>
-                        <td><%= data[i].title %></td>
-                        <td><%= data[i].author %></td>
-                        <td><%= data[i].genre %></td>
-                        <td><%= data[i].publisher %></td>
-                        <td><%= data[i].synopsis %></td>
-                        <td><%= data[i].pages %></td>
-                        <td><%= data[i].status %></td>
+                        <th>Título</th>
+                        <th>Autor</th>
+                        <th>Gênero</th>
+                        <th>Editora</th>
+                        <th style="min-width: 500px;">Sinopse</th>
+                        <th>Páginas</th>
+                        <th>Status</th>
                     </tr>
-                <% } %>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    <% for(var i=0; i < data.length; i++){ %>
+                        <tr>
+                            <td><%= data[i].title %></td>
+                            <td><%= data[i].author %></td>
+                            <td><%= data[i].genre %></td>
+                            <td><%= data[i].publisher %></td>
+                            <td><%= data[i].synopsis %></td>
+                            <td><%= data[i].pages %></td>
+                            <td><%= data[i].status %></td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </article>
     </section>
 
     <% include footer %>
