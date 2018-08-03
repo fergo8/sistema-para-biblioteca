@@ -8,6 +8,38 @@
         <h1>Biblioteca</h1>
         <hr /><br />
 
+        <article>
+            <form class="form-group" action="/pesquisar" method="get">
+                <div class="row">
+                    <div class="col-md-10">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Por autor:</label>
+                                <input class="form-control" type="text">
+                            </div>
+                            <div class="col-md-6">
+                                <label>Por gênero:</label>
+                                <input class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Por qtd páginas:</label>
+                                <input class="form-control" type="text">
+                            </div>
+                            <div class="col-md-6">
+                                <label>Por status:</label>
+                                <input class="form-control" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <input class="btn btn-success" type="submit" value="Pesquisar">
+                    </div>
+                </div>
+            </form>
+        </article>
+
         <article class="table-responsive">
             <table class="table table-hover">
                 <thead class="thead-dark">
