@@ -10,6 +10,7 @@ module.exports.book_cadastre = (app, req, res) => {
 
 module.exports.book_register = (app, req, res) => {
 
+    var user = req.session.user;
     var formData = req.body;
 
     req.assert("title", "Título do livro não foi definido").notEmpty();
@@ -18,7 +19,7 @@ module.exports.book_register = (app, req, res) => {
     var error = req.validationErrors();
 
     if(error){
-        res.render("book_cadastre", { bookValid : error, msg : {} });
+        res.render("book_cadastre", { bookValid : error, msg : {}, user : user });
         return;
     }
 
@@ -27,5 +28,5 @@ module.exports.book_register = (app, req, res) => {
 
     LibraryDAO.insertBook(formData);
 
-    res.render("book_cadastre", { bookValid : {}, msg : "Livro cadastrado com sucesso" });
+    res.render("book_cadastre", { bookValid : {}, msg : "Livro cadastrado com sucesso", user : user });
 }
