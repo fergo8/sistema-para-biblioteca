@@ -22,6 +22,17 @@ LibraryDAO.prototype.showBooks = function(res, user){
     });
 }
 
+LibraryDAO.prototype.searchBooks = function(res, user){
+    this._connection.open(function(err, mongoclient){
+        mongoclient.collection("book", function(err, collection){
+            collection.find().toArray(function(err, result){
+                res.render("library", { data : {}, user : user })
+            });
+        });
+        mongoclient.close();
+    });
+}
+
 module.exports = () => {
     return LibraryDAO;
 }
