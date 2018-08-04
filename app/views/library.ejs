@@ -9,7 +9,7 @@
         <hr /><br />
 
         <article>
-            <form class="form-group" action="/pesquisar" method="get">
+            <form class="form-group" action="/pesquisar" method="post">
                 <div class="row">
                     <div class="col-md-10">
                         <div class="row">
@@ -20,6 +20,7 @@
                             <div class="col-md-6">
                                 <label for="genre">Por gênero:</label>
                                 <select class="form-control" name="genre" id="genre">
+                                    <option value="">Escolha o gênero</option>
                                     <option value="Aventura">Aventura</option>
                                     <option value="Biográfico">Biográfico</option>
                                     <option value="Chick-Lit e Lad-Lit">Chick-Lit e Lad-Lit</option>
@@ -43,8 +44,9 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <label for="pages">Por qtd páginas:</label>
-                                <select name="pages" id="pages">
+                                <label for="pages">Por quantidade de páginas:</label>
+                                <select class="form-control" name="pages" id="pages">
+                                    <option value="">Escolha quantas páginas </option>
                                     <option value="Menos de 50">Menos de 50</option>
                                     <option value="51 à 100">51 à 100</option>
                                     <option value="101 à 150">101 à 150</option>
@@ -60,7 +62,8 @@
                             </div>
                             <div class="col-md-6">
                                 <label for="status">Por status:</label>
-                                <select name="status" id="status">
+                                <select class="form-control" name="status" id="status">
+                                    <option value="">Escolha o status</option>
                                     <option value="Não lido">Não lido</option>
                                     <option value="Lendo">Lendo</option>
                                     <option value="Lido">Lido</option>

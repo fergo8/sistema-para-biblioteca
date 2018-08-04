@@ -19,9 +19,10 @@ module.exports.search_book = (app, req, res) => {
     }
 
     var user = req.session.user;
+    var dataForm = req.body;
 
     var connection = app.config.dbConnection;
     var LibraryDAO = new app.app.models.LibraryDAO(connection);
 
-    LibraryDAO.searchBooks(res, user);
+    LibraryDAO.searchBooks(dataForm, res, user);
 }
