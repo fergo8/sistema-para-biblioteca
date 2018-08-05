@@ -1,6 +1,6 @@
 module.exports.library = (app, req, res) => {
     if(req.session.authorized !== true){
-        res.send("Necessário realizar login");
+        res.render("error");
         return;
     }
 
@@ -14,7 +14,7 @@ module.exports.library = (app, req, res) => {
 
 module.exports.search_book = (app, req, res) => {
     if(req.session.authorized !== true){
-        res.send("Necessário realizar login");
+        res.render("error");
         return;
     }
 

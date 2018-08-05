@@ -1,6 +1,6 @@
 module.exports.book_cadastre = (app, req, res) => {
     if(req.session.authorized !== true){
-        res.send("Necessário realizar login");
+        res.render("error");
         return;
     }
     
