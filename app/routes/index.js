@@ -6,4 +6,8 @@ module.exports = (app) => {
     app.post("/authenticate", (req, res) => {
         app.app.controllers.index.authenticate(app, req, res);
     });
+
+    app.get("/sair", (req, res) => {
+        app.app.controllers.index.exit(app, req, res);
+    });
 }

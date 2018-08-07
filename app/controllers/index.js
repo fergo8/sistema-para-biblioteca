@@ -20,3 +20,9 @@ module.exports.authenticate = (app, req, res) => {
 
     UserDAO.authenticate(formData, req, res);
 }
+
+module.exports.exit = (app, req, res) => {
+    req.session.destroy(function(err){
+        res.render("index", { valid : {} });
+    });
+}
