@@ -40,6 +40,19 @@ LibraryDAO.prototype.searchBooks = function(dataForm, res, user){
     });
 }
 
+LibraryDAO.prototype.book_restriction = function(user, res){
+    this._connection.open(function(err, mongoclient){
+        mongoclient.collection("book", function(err, collection){
+            collection.find({
+
+            }).toArray(function(err, result){
+
+            });
+        });
+        mongoclient.close();
+    });
+}
+
 module.exports = () => {
     return LibraryDAO;
 }
