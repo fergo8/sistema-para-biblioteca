@@ -12,6 +12,7 @@
                 <form class="form-group" action="/generate_tbr" method="post">
                     <label for="genre">Gênero:</label>
                     <select class="form-control" name="genre" id="genre">
+                        <option value="">Escolha o gênero</option>
                         <option value="Aventura">Aventura</option>
                         <option value="Biográfico">Biográfico</option>
                         <option value="Chick-Lit e Lad-Lit">Chick-Lit e Lad-Lit</option>
@@ -34,6 +35,7 @@
                 
                     <label for="pages">Quantidade de páginas:</label>
                     <select class="form-control" name="pages" id="pages">
+                        <option value="">Escolha quantas páginas</option>
                         <option value="Menos de 50">Menos de 50</option>
                         <option value="51 à 100">51 à 100</option>
                         <option value="101 à 150">101 à 150</option>
@@ -51,7 +53,85 @@
                 </form>
             </article>
             <article class="col-md-9">
-                <p>teste</p>
+                <% if(data.length > 0){ %>
+                    <ul>
+                        <li>Janeiro</li>
+                        <ul>
+                        <% for(var i=0; i < 4; i++ ){ %>
+                            <li><%= data[i].title %></li>
+                        <% } %>
+                        </ul>
+                        <li>Fevereiro</li>
+                        <ul>
+                        <% for(var i=0; i < 4; i++ ){ %>
+                            <li><%= data[i].title %></li>
+                        <% } %>
+                        </ul>
+                        <li>Março</li>
+                        <ul>
+                        <% for(var i=0; i < 4; i++ ){ %>
+                            <li><%= data[i].title %></li>
+                        <% } %>
+                        </ul>
+                        <li>Abril</li>
+                        <ul>
+                        <% for(var i=0; i < 4; i++ ){ %>
+                            <li><%= data[i].title %></li>
+                        <% } %>
+                        </ul>
+                        <li>Maio</li>
+                        <ul>
+                        <% for(var i=0; i < 4; i++ ){ %>
+                            <li><%= data[i].title %></li>
+                        <% } %>
+                        </ul>
+                        <li>Junho</li>
+                        <ul>
+                        <% for(var i=0; i < 4; i++ ){ %>
+                            <li><%= data[i].title %></li>
+                        <% } %>
+                        </ul>
+                        <li>Julho</li>
+                        <ul>
+                        <% for(var i=0; i < 4; i++ ){ %>
+                            <li><%= data[i].title %></li>
+                        <% } %>
+                        </ul>
+                        <li>Agosto</li>
+                        <ul>
+                        <% for(var i=0; i < 4; i++ ){ %>
+                            <li><%= data[i].title %></li>
+                        <% } %>
+                        </ul>
+                        <li>Setembro</li>
+                        <ul>
+                        <% for(var i=0; i < 4; i++ ){ %>
+                            <li><%= data[i].title %></li>
+                        <% } %>
+                        </ul>
+                        <li>Outubro</li>
+                        <ul>
+                        <% for(var i=0; i < 4; i++ ){ %>
+                            <li><%= data[i].title %></li>
+                        <% } %>
+                        </ul>
+                        <li>Novembro</li>
+                        <ul>
+                        <% for(var i=0; i < 4; i++ ){ %>
+                            <li><%= data[i].title %></li>
+                        <% } %>
+                        </ul>
+                        <li>Dezembro</li>
+                        <ul>
+                        <% for(var i=0; i < 4; i++ ){ %>
+                            <li><%= data[i].title %></li>
+                        <% } %>
+                        </ul>
+                    </ul>
+                <% }
+                else { %>
+                    <p>teste</p>
+                <% } %>
             </article>
         </div>
     </section>
