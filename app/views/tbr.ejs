@@ -10,43 +10,19 @@
         <div class="row">
             <article class="col-md-3">
                 <form class="form-group" action="/generate_tbr" method="post">
-                    <label for="genre">Gênero:</label>
-                    <select class="form-control" name="genre" id="genre">
-                        <option value="">Escolha o gênero</option>
-                        <option value="Aventura">Aventura</option>
-                        <option value="Biográfico">Biográfico</option>
-                        <option value="Chick-Lit e Lad-Lit">Chick-Lit e Lad-Lit</option>
-                        <option value="Clássico">Clássico</option>
-                        <option value="Conto e Crônica">Conto e Crônica</option>
-                        <option value="Distopia">Distopia</option>
-                        <option value="Epistolar">Epistolar</option>
-                        <option value="Fantasia">Fantasia</option>
-                        <option value="Ficção científica">Ficção científica</option>
-                        <option value="Graphic Novel">Graphic Novel</option>
-                        <option value="História em Quadrinhos">História em Quadrinhos</option>
-                        <option value="Histórico">Histórico</option>
-                        <option value="Infantil e Infanto-Juvenil">Infantil e Infanto-Juvenil</option>
-                        <option value="New Adult">New Adult</option>
-                        <option value="Poesia e Prosa Poética">Poesia e Prosa Poética</option>
-                        <option value="Sobrenatural">Sobrenatural</option>
-                        <option value="Terror e Thriller">Terror e Thriller</option>
-                        <option value="Young Adult">Young Adult</option>
-                    </select>
-                
-                    <label for="pages">Quantidade de páginas:</label>
-                    <select class="form-control" name="pages" id="pages">
-                        <option value="">Escolha quantas páginas</option>
-                        <option value="Menos de 50">Menos de 50</option>
-                        <option value="51 à 100">51 à 100</option>
-                        <option value="101 à 150">101 à 150</option>
-                        <option value="151 à 200">151 à 200</option>
-                        <option value="201 à 250">201 à 250</option>
-                        <option value="251 à 300">251 à 300</option>
-                        <option value="301 à 350">301 à 350</option>
-                        <option value="351 à 400">351 à 400</option>
-                        <option value="401 à 450">401 à 450</option>
-                        <option value="451 à 500">451 à 500</option>
-                        <option value="Mais de 500">Mais de 500</option>
+                    <label for="books">Livros por mês:</label>
+                    <select class="form-control" name="books" id="books">
+                        <option value="0">Escolha a quantidade</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
                     </select>
                     <hr>
                     <input class="btn btn-success" type="submit" value="Gerar TBR" />
@@ -59,7 +35,7 @@
                         <% for(var i=0; i < month.length; i++){ %>
                             <li><%= month[i] %></li>
                             <ul>
-                                <% for(var j=0; j < 4; j++){
+                                <% for(var j=0; j < books.books; j++){
                                     var iterate = Math.floor(Math.random() * 10); %>
                                     <li><%= data[iterate].title %></li>
                                 <% } %>

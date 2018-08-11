@@ -5,7 +5,7 @@ module.exports.tbr = (app, req, res) => {
     }
 
     var user = req.session.user;
-    res.render("tbr", { data : {}, user : user });
+    res.render("tbr", { data: {}, user: user, books : {} });
 }
 
 module.exports.generate_tbr = (app, req, res) => {
