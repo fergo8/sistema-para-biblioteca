@@ -29,23 +29,30 @@
                 </form>
             </article>
             <article class="col-md-9">
-                <% var month = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
-                if(data.length > 0){ %>
-                    <ul>
-                        <% for(var i=0; i < month.length; i++){ %>
-                            <li><%= month[i] %></li>
-                            <ul>
-                                <% for(var j=0; j < books.books; j++){
-                                    var iterate = Math.floor(Math.random() * 10); %>
-                                    <li><%= data[iterate].title %></li>
-                                <% } %>
-                            </ul>
-                        <% } %>
-                    </ul>
-                <% }
-                else { %>
-                    <p>teste</p>
-                <% } %>
+                <ul>
+                    <% var month = [
+                        "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+                        "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+                    ];
+                    var range = month.length * books.books;
+                    if(data.length > 0){
+                        for(var i=0; i < month.length; i++){
+                            %><li><%=month[i]%></li>
+                            <ul><%
+                            for(var j=0; j < books.books; j++){
+                                var random = Math.floor((Math.random() * range));
+                                if(data[j].genre != data[random].genre){
+                                    %><li><%=data[random].title%></li><%
+                                }
+                            }
+                            %></ul><%
+                        }
+                    }
+                    else {
+                        %><h2>TBR ainda não gerada!</h2>
+                        <p>Clique no botão ao lado para gerar a lista de livros deste ano.</p><%
+                    } %>
+                </ul>
             </article>
         </div>
     </section>
