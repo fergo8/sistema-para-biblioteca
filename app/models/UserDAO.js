@@ -2,9 +2,18 @@ function UserDAO(connection){
     this._connection = connection();
 }
 
-UserDAO.prototype.insertUser = function(user){
+UserDAO.prototype.insertUser = function(user, res){
     this._connection.open(function(err, mongoclient){
         mongoclient.collection("user", function(err, collection){
+
+            collection.find().toArray(function(err, result){
+                for(var i=0; i < result.length; i++){
+                    if(user.nickname == result[i].nickname){
+                        res.render("cadastre", { valid: {} });
+                    }
+                }
+            });
+            
             collection.insert(user);
         });
         mongoclient.close();

@@ -19,7 +19,7 @@ module.exports.register = (app, req, res) => {
     var connection = app.config.dbConnection;
     var UserDAO = new app.app.models.UserDAO(connection);
     
-    UserDAO.insertUser(formData);
+    UserDAO.insertUser(formData, res);
 
     res.render("index", { valid : {} });
 }
