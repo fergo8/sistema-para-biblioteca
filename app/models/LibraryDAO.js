@@ -51,6 +51,17 @@ LibraryDAO.prototype.book_selection = function(dataForm, user, res){
     });
 }
 
+LibraryDAO.prototype.book_update = function(user, res){
+    this._connection.open(function(err, mongoclient){
+        mongoclient.collection("book", function(err, collection){
+            collection.find().toArray(function(err, result){
+                res.render("book_update", { data: result, user: user });
+            });
+        });
+        mongoclient.close();
+    });
+}
+
 module.exports = () => {
     return LibraryDAO;
 }

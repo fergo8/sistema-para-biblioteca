@@ -38,5 +38,9 @@ module.exports.book_update = (app, req, res) => {
     }
 
     var user = req.session.user;
-    res.render("book_update", { user: user });
+
+    var connection = app.config.dbConnection;
+    var LibraryDAO = new app.app.models.LibraryDAO(connection);
+
+    LibraryDAO.book_update(user, res);
 }
