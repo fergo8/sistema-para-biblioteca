@@ -30,3 +30,13 @@ module.exports.book_register = (app, req, res) => {
 
     res.render("book_cadastre", { bookValid : {}, msg : "Livro cadastrado com sucesso", user : user });
 }
+
+module.exports.book_update = (app, req, res) => {
+    if (req.session.authorized !== true) {
+        res.render("error");
+        return;
+    }
+
+    var user = req.session.user;
+    res.render("book_update", { user: user });
+}

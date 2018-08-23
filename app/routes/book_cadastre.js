@@ -6,4 +6,8 @@ module.exports = (app) => {
     app.post("/book_register", (req, res) => {
         app.app.controllers.book_cadastre.book_register(app, req, res);
     });
+
+    app.get("/alterar_livro", (req, res) => {
+        app.app.controllers.book_cadastre.book_update(app, req, res);
+    });
 }
