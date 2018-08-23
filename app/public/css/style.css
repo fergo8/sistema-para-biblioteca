@@ -13,6 +13,11 @@ html, body, .login-screen {
     margin-top: 80px;
 }
 
+.arcticle-margin {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 /* Login screen */
 .login-screen {
     display: table;
