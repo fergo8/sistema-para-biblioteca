@@ -44,3 +44,11 @@ module.exports.book_update = (app, req, res) => {
 
     LibraryDAO.book_update(user, res);
 }
+
+module.exports.alter_book = (app, req, res) => {
+    
+}
+
+module.exports.delete_book = (app, req, res) => {
+
+}
