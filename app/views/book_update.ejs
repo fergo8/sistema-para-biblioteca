@@ -2,11 +2,23 @@
 <html lang="pt-br">
 <% include header %>
 <body>
-    <section class="login-screen">
-        <article class="login-content">
-            
-            <h1>teste maroto</h1>
-            
+    <% include navbar %>
+
+    <section class="container navbar-margin">
+        <h1>Atualização e Exclusão de Livros</h1>
+        <hr /><br />
+        
+        <article class="">
+            <form action="/" method="post">
+                <div class="form-group">
+                    <label for="alter-book">Escolha o livro:</label>
+                    <select multiple class="form-control" id="alter-book">
+                        <% for(var i=0; i < data.length; i++){ %>
+                        <option><%=data[i].title+" -- "+data[i].author%></option>
+                        <% } %>
+                    </select>
+                </div>
+            </form>
         </article>
     </section>
     <% include footer %>
