@@ -9,14 +9,96 @@
         <hr /><br />
         
         <article class="">
-            <form action="/" method="post">
+            <form action="/livro_alterado" method="post">
                 <div class="form-group">
-                    <label for="alter-book">Escolha o livro:</label>
-                    <select multiple class="form-control" id="alter-book">
+                    
+                    <label for="alter-book">Escolha o livro a ser alterado/excluído:</label>
+                    <select multiple class="form-control" name="alter-book" id="alter-book">
                         <% for(var i=0; i < data.length; i++){ %>
                         <option><%=data[i].title+" -- "+data[i].author%></option>
                         <% } %>
                     </select>
+
+                    <div class="row">
+                        <div class="col-md-6 d-flex justify-content-center align-items-center arcticle-margin">
+                            <input class="btn btn-danger" type="submit" formaction="/livro_deletado" value="Deletar">
+                        </div>
+                        <div class="col-md-6 d-flex justify-content-center align-items-center arcticle-margin">
+                            <input class="btn btn-success" type="submit" value="Alterar">
+                        </div>
+                    </div>
+
+                    <div class="firm-row">
+                        <div class="form-group">
+                            <label for="title">Título:</label>
+                            <input class="form-control" type="text" name="title" id="title" placeholder="Título do livro" />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="author">Autor:</label>
+                            <input class="form-control" type="text" name="author" id="author" placeholder="Nome do autor" />
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="publisher">Editora:</label>
+                            <input class="form-control" type="text" name="publisher" id="publisher" placeholder="Nome da editora" />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="genre">Gênero:</label>
+                            <select class="form-control" name="genre" id="genre">
+                                <option value="Aventura">Aventura</option>
+                                <option value="Biográfico">Biográfico</option>
+                                <option value="Chick-Lit e Lad-Lit">Chick-Lit e Lad-Lit</option>
+                                <option value="Clássico">Clássico</option>
+                                <option value="Conto e Crônica">Conto e Crônica</option>
+                                <option value="Distopia">Distopia</option>
+                                <option value="Epistolar">Epistolar</option>
+                                <option value="Fantasia">Fantasia</option>
+                                <option value="Ficção científica">Ficção científica</option>
+                                <option value="Graphic Novel">Graphic Novel</option>
+                                <option value="História em Quadrinhos">História em Quadrinhos</option>
+                                <option value="Histórico">Histórico</option>
+                                <option value="Infantil e Infanto-Juvenil">Infantil e Infanto-Juvenil</option>
+                                <option value="New Adult">New Adult</option>
+                                <option value="Poesia e Prosa Poética">Poesia e Prosa Poética</option>
+                                <option value="Sobrenatural">Sobrenatural</option>
+                                <option value="Terror e Thriller">Terror e Thriller</option>
+                                <option value="Young Adult">Young Adult</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="pages">Quantidade de páginas:</label>
+                            <select class="form-control" name="pages" id="pages">
+                                <option value="Menos de 50">Menos de 50</option>
+                                <option value="51 à 100">51 à 100</option>
+                                <option value="101 à 150">101 à 150</option>
+                                <option value="151 à 200">151 à 200</option>
+                                <option value="201 à 250">201 à 250</option>
+                                <option value="251 à 300">251 à 300</option>
+                                <option value="301 à 350">301 à 350</option>
+                                <option value="351 à 400">351 à 400</option>
+                                <option value="401 à 450">401 à 450</option>
+                                <option value="451 à 500">451 à 500</option>
+                                <option value="Mais de 500">Mais de 500</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="status">Status:</label>
+                            <select class="form-control" name="status" id="status">
+                                <option value="Não lido">Não lido</option>
+                                <option value="Lendo">Lendo</option>
+                                <option value="Lido">Lido</option>
+                                <option value="Abandonado">Abandonado</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="synopsis">Sinopse:</label>
+                        <textarea class="form-control" name="synopsis" id="synopsis" rows="4" placeholder="Insira a sinopse do livro aqui..."></textarea>
+                    </div>
+
                 </div>
             </form>
         </article>
