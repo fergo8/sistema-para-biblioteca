@@ -12,10 +12,10 @@
             <form action="/livro_alterado" method="post">
                 <div class="form-group">
                     
-                    <label for="alter-book">Escolha o livro a ser alterado/excluído:</label>
-                    <select multiple class="form-control" name="alter-book" id="alter-book">
+                    <label for="alterbook">Escolha o livro a ser alterado/excluído:</label>
+                    <select multiple class="form-control" name="alterbook" id="alterbook">
                         <% for(var i=0; i < data.length; i++){ %>
-                        <option><%=data[i].title+" -- "+data[i].author%></option>
+                        <option><%=data[i].title%></option>
                         <% } %>
                     </select>
 
