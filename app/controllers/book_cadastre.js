@@ -47,8 +47,28 @@ module.exports.book_update = (app, req, res) => {
 
 module.exports.alter_book = (app, req, res) => {
     
+    var user = req.session.user;
+    var formData = req.body;
 }
 
 module.exports.delete_book = (app, req, res) => {
+    
+    var user = req.session.user;
+    var formData = req.body;
 
+    req.assert("alterbook", "Livro a ser excluído não foi selecionado").notEmpty();
+
+    var error = req.validationErrors();
+
+    if (error) {
+        res.render("book_update", { data : {}, user : user, msg : {}, bookValid: error });
+        return;
+    }
+
+    var connection = app.config.dbConnection;
+    var LibraryDAO = new app.app.models.LibraryDAO(connection);
+
+    LibraryDAO.delete_book(formData);
+
+    res.render("book_update", { data: {}, user: user, msg: "Livro deletado com sucesso", bookValid: {} });
 }
