@@ -30,6 +30,14 @@ html, body, .login-screen {
     justify-content: center;
 }
 
+.login-bg {
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px;
+}
+
 .login-form {
     max-width: 200px;
     margin-left: auto;
@@ -40,4 +48,8 @@ html, body, .login-screen {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.login-bg-img {
+    background-image: url("../images/bg.jpg");
 }
