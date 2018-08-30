@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <% include header %>
-<body>
+<body class="login-bg-img">
     <section class="login-screen">
         <article class="login-content">
             
-            <% if(valid.length > 0){ %>
-                <div class="alert alert-danger login-alert">
-                    <strong>Atenção!</strong>
-                    <ul>
-                        <% for(var i=0; i < valid.length; i++){ %>
-                            <li><%= valid[i].msg %></li>
-                        <% } %>
-                    </ul>
-                </div>
-            <% } %>
-            
-            <form class="form-group my-2 my-lg-0 login-form" action="/register" method="POST">
-                <h1>Cadastro</h1>
-                <hr /><br />
-                <input class="form-control mr-sm-2" name="user" type="text" placeholder="Nome do usuário" aria-label="Nome" /><br />
-                <input class="form-control mr-sm-2" name="nickname" type="text" placeholder="Nickname" aria-label="Nickname" /><br />
-                <input class="form-control mr-sm-2" name="password" type="password" placeholder="Senha" aria-label="Senha" /><br />
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cadastrar</button>
-            </form>
+            <div class="login-bg">
+                <% if(valid.length > 0){ %>
+                    <div class="alert alert-danger login-alert">
+                        <strong>Atenção!</strong>
+                        <ul>
+                            <% for(var i=0; i < valid.length; i++){ %>
+                                <li><%= valid[i].msg %></li>
+                            <% } %>
+                        </ul>
+                    </div>
+                <% } %>
+                
+                <form class="form-group my-2 my-lg-0 login-form text-center" action="/register" method="POST">
+                    <h1>Cadastro</h1>
+                    <hr /><br />
+                    <input class="form-control mr-sm-2" name="user" type="text" placeholder="Nome completo" aria-label="Nome" /><br />
+                    <input class="form-control mr-sm-2" name="nickname" type="text" placeholder="Nickname" aria-label="Nickname" /><br />
+                    <input class="form-control mr-sm-2" name="password" type="password" placeholder="Senha" aria-label="Senha" /><br />
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cadastrar</button>
+                </form>
+            </div>
         </article>
     </section>
     <% include footer %>
