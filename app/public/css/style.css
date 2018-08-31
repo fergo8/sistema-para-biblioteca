@@ -53,3 +53,12 @@ html, body, .login-screen {
 .login-bg-img {
     background-image: url("../images/bg.jpg");
 }
+
+/* Error screen */
+.error-bg {
+    background-color: rgba(255, 255, 255, 0.9);
+    max-width: 800px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 40px;
+}

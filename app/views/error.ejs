@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <% include header %>
-<body>
+<body class="login-bg-img">
 
-    <section class="container">
-        <article class="row">
-            <div class="col-md-6">
-                <h1>Poxa vida!<br>Você não fez login...</h1>
-                <p>Realize o login utilizando seu nome de usuário e senha antes de acessar esta página.</p>
-                <form>
-                    <button class="btn btn-info my-2 my-sm-0" type="submit" formaction="/" formmethod="GET">Voltar ao login</button>
-                </form>
-            </div>
-            <div class="col-md-6">
-                <img src="images/unicornio-deslogado.jpg" alt="Unicórnio triste porque está deslogado">
+    <section class="login-screen">
+        <article class="login-content">
+            <div class="row error-bg">
+                <div class="col-md-6 text-right">
+                    <h2>Poxa vida!<br>Você não fez login...</h2>
+                    <p>Realize o login utilizando seu nome de usuário e senha antes de acessar esta página.</p>
+                    <form>
+                        <button class="btn btn-info my-2 my-sm-0" type="submit" formaction="/" formmethod="GET">Voltar ao login</button>
+                    </form>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img class="img-fluid" src="images/unicornio-deslogado.png" alt="Unicórnio triste porque está deslogado">
+                </div>
             </div>
         </article>
     </section>
