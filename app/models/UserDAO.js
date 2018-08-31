@@ -5,16 +5,28 @@ function UserDAO(connection){
 UserDAO.prototype.insertUser = function(user, res){
     this._connection.open(function(err, mongoclient){
         mongoclient.collection("user", function(err, collection){
-
+            var aux = false;
             collection.find().toArray(function(err, result){
                 for(var i=0; i < result.length; i++){
-                    if(user.nickname == result[i].nickname){
-                        res.render("cadastre", { valid: {} });
+                    
+                    if(user.nickname === result[i].nickname){
+                        aux = true;
+                        console.log("user: "+user.nickname);
+                        console.log("result: "+result[i].nickname+" "+i);
                     }
                 }
+                return aux;
             });
+            console.log(aux);
+            if(aux === true){
+                res.render("cadastre", { valid: {} });
+            }
+            else {
+                collection.insert(user);
+                res.render("index", { valid: {} });
+            }
             
-            collection.insert(user);
+            
         });
         mongoclient.close();
     });
