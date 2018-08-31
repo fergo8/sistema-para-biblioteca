@@ -65,7 +65,6 @@ LibraryDAO.prototype.updateBook = function(user, res){
 LibraryDAO.prototype.alterBook = function(data){
     this._connection.open(function(err, mongoclient){
         mongoclient.collection("book", function(err, collection){
-            console.log(data);
             collection.replaceOne(
                 { title: data.alterbook },
                 {
