@@ -62,6 +62,27 @@ LibraryDAO.prototype.updateBook = function(user, res){
     });
 }
 
+LibraryDAO.prototype.alterBook = function(data){
+    this._connection.open(function(err, mongoclient){
+        mongoclient.collection("book", function(err, collection){
+            console.log(data);
+            collection.replaceOne(
+                { title: data.alterbook },
+                {
+                    title: data.title,
+                    author: data.author,
+                    publisher: data.publisher,
+                    genre: data.genre,
+                    pages: data.pages,
+                    status: data.status,
+                    synopsis: data.synopsis
+                }
+            );
+        });
+        mongoclient.close();
+    });
+}
+
 LibraryDAO.prototype.deleteBook = function(book){
     this._connection.open(function(err, mongoclient){
         mongoclient.collection("book", function(err, collection){
