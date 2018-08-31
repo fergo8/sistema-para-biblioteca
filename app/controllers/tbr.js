@@ -16,5 +16,5 @@ module.exports.generate_tbr = (app, req, res) => {
     var connection = app.config.dbConnection;
     var LibraryDAO = new app.app.models.LibraryDAO(connection);
 
-    LibraryDAO.book_selection(dataForm, user, res);
+    LibraryDAO.bookSelection(dataForm, user, res);
 }

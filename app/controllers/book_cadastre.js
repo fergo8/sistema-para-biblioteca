@@ -42,7 +42,7 @@ module.exports.book_update = (app, req, res) => {
     var connection = app.config.dbConnection;
     var LibraryDAO = new app.app.models.LibraryDAO(connection);
 
-    LibraryDAO.book_update(user, res);
+    LibraryDAO.updateBook(user, res);
 }
 
 module.exports.alter_book = (app, req, res) => {
@@ -68,7 +68,7 @@ module.exports.delete_book = (app, req, res) => {
     var connection = app.config.dbConnection;
     var LibraryDAO = new app.app.models.LibraryDAO(connection);
 
-    LibraryDAO.delete_book(formData);
+    LibraryDAO.deleteBook(formData);
 
     res.render("book_update", { data: {}, user: user, msg: "Livro deletado com sucesso", bookValid: {} });
 }

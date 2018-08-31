@@ -40,7 +40,7 @@ LibraryDAO.prototype.searchBooks = function(dataForm, res, user){
     });
 }
 
-LibraryDAO.prototype.book_selection = function(dataForm, user, res){
+LibraryDAO.prototype.bookSelection = function(dataForm, user, res){
     this._connection.open(function(err, mongoclient){
         mongoclient.collection("book", function(err, collection){
             collection.find().toArray(function(err, result){
@@ -51,7 +51,7 @@ LibraryDAO.prototype.book_selection = function(dataForm, user, res){
     });
 }
 
-LibraryDAO.prototype.book_update = function(user, res){
+LibraryDAO.prototype.updateBook = function(user, res){
     this._connection.open(function(err, mongoclient){
         mongoclient.collection("book", function(err, collection){
             collection.find().toArray(function(err, result){
@@ -62,7 +62,7 @@ LibraryDAO.prototype.book_update = function(user, res){
     });
 }
 
-LibraryDAO.prototype.delete_book = function(book){
+LibraryDAO.prototype.deleteBook = function(book){
     this._connection.open(function(err, mongoclient){
         mongoclient.collection("book", function(err, collection){
             collection.deleteOne({ title: book.alterbook });

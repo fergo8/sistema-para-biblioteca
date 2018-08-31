@@ -25,8 +25,6 @@ UserDAO.prototype.insertUser = function(user, res){
                 collection.insert(user);
                 res.render("index", { valid: {} });
             }
-            
-            
         });
         mongoclient.close();
     });
