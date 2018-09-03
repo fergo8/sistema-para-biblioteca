@@ -29,7 +29,7 @@
                 </form>
             </article>
             <article class="col-md-9">
-                <ul>
+                <ul class="list-group">
                     <% var month = [
                         "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
                         "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
@@ -37,20 +37,24 @@
                     var range = month.length * books.books;
                     if(data.length > 0){
                         for(var i=0; i < month.length; i++){
-                            %><li><%=month[i]%></li>
-                            <ul><%
+                            %><li class="list-group-item month-color month-size"><%=month[i]%></li>
+                            <ul class="list-group list-group-flush"><%
                             for(var j=0; j < books.books; j++){
                                 var random = Math.floor((Math.random() * range));
                                 if(data[j].genre != data[random].genre){
-                                    %><li><%=data[random].title%></li><%
+                                    %><li class="list-group-item month-size"><%=data[random].title%></li><%
                                 }
                             }
                             %></ul><%
                         }
                     }
                     else {
-                        %><h2>TBR ainda não gerada!</h2>
-                        <p>Clique no botão ao lado para gerar a lista de livros deste ano.</p><%
+                        %>
+                        <div class="text-center">
+                            <h2>TBR ainda não gerada!</h2>
+                            <p>Clique no botão ao lado para gerar a lista de livros deste ano.</p>
+                            <img class="img-fluid" src="images/unicornio-dormindo.png" />
+                        </div><%
                     } %>
                 </ul>
             </article>
